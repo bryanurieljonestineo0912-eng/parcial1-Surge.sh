@@ -6,50 +6,130 @@
     <title>Primer Parcial - Integración Continua</title>
 
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body{
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            color: white;
-            text-align: center;
-            margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            color: white;
+            padding: 20px;
         }
 
-        .card{
-            background: rgba(255,255,255,0.15);
-            padding: 40px;
+        .container{
+            max-width: 900px;
+            width: 100%;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
             border-radius: 20px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         }
 
         h1{
             font-size: 3rem;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        p{
+        .subtitle{
             font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cards{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card{
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+        }
+
+        .card h2{
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
         .footer{
-            margin-top: 20px;
-            font-size: 0.9rem;
+            margin-top: 35px;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .badge{
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: white;
+            color: #4f46e5;
+            border-radius: 30px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1>🚀 Hola Mundo</h1>
-        <p>Proyecto desplegado automáticamente con GitHub Actions y Surge.sh</p>
+    <div class="container">
+
+        <h1>🚀 Integración Continua</h1>
+
+        <p class="subtitle">
+            Sitio web desplegado automáticamente utilizando GitHub Actions y Surge.sh
+        </p>
+
+        <div class="badge">
+            CI/CD Activo
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>📂 GitHub</h2>
+                <p>
+                    El código fuente se almacena en un repositorio de GitHub.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>⚙️ GitHub Actions</h2>
+                <p>
+                    Automatiza el proceso de despliegue cada vez que se realiza un push.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>🌐 Surge.sh</h2>
+                <p>
+                    Publica automáticamente la página web en Internet.
+                </p>
+            </div>
+
+        </div>
 
         <div class="footer">
-            <strong>Estudiante:</strong> Bryan Jones
+            <p><strong>Asignatura:</strong> Integración Continua</p>
+            <p><strong>Estudiante:</strong> Bryan Jones</p>
+            <p><strong>Proyecto:</strong> Primer Parcial</p>
         </div>
+
     </div>
 
 </body>
